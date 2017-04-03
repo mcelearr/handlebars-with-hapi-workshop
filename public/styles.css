@@ -4,6 +4,10 @@ body {
   font-family: 'Days One', sans-serif;
 }
 
+img {
+  width: 600px;
+}
+
 .reverse-image {
   animation: spin 3s;
   animation-fill-mode: forwards;
