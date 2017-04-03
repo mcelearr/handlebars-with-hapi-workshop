@@ -6,14 +6,15 @@
   "dependencies": {
     "handlebars": "^4.0.6",
     "hapi": "^16.1.1",
-    "inert": "^4.1.0",
+    "inert": "^4.2.0",
+    "nodemon": "^1.11.0",
     "path": "^0.12.7",
     "vision": "^4.1.1"
   },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "nodemon server.js"
   },
   "author": "",
   "license": "ISC"

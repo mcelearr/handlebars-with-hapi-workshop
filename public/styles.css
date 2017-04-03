@@ -1,3 +1,25 @@
 body {
-  background: rgba(108, 20, 129, 0.63);
+  background: rgba(108, 20, 129, 0.3);
+  text-align: center;
+  font-family: 'Days One', sans-serif;
+}
+
+.reverse-image {
+  animation: spin 3s;
+  animation-fill-mode: forwards;
+}
+
+.original-image {
+  animation: fade-in 3s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes spin {
+  0%   { transform: rotate(0); }
+  100% { transform: rotate(180deg); }
+}
+
+@keyframes fade-in {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
 }

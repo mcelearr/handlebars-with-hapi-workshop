@@ -2,6 +2,7 @@ const hapi = require('hapi');
 const vision = require('vision');
 const path = require('path');
 const routes = require('./routes/index.js');
+const inert = require('inert');
 
 const server = new hapi.Server()
 
@@ -11,7 +12,7 @@ server.connection({
   port: Number(process.argv[2] || 4040)
 })
 
-server.register(vision, function(err){
+server.register([inert, vision], function(err){
   if (err) throw err;
 
   server.views({
