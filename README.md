@@ -1,15 +1,46 @@
-# templates
-Using helpers and templates
+# Hapi with handlebars workshop
 
 1. Clone this repo
-2. Run npm i
-3. Run node server.js
+2. npm i
+3. npm start
 
 ## What
 
-A simple working hapi server using handlebars and helper functions to serve up a basic file.
+A simple working hapi server using handlebars, layout/partials, helpers and serving static files.
 
-## How
+## Steps
+
+### Start
+
+Serves up basic static page.
+Routes
+- home.js
+- index.js
+
+layout
+- default.hbs
+
+view
+- index.hbs
+
+### Step 1
+
+Create header partial
+partials
+- header.hbs
+
+### Step 2
+
+Serve up reverse page.
+Routes
+- reverse.js
+
+helpers
+- reverse.js
+
+view
+- reverse.hbs
+
 
 We create a helper folder in the same folder as the main template, and then js helper files within that folder, and direct to it with the server.views options:
 
@@ -54,5 +85,5 @@ Finally, in your handler, you need to use ```reply.view``` and call the template
     message: 'HELP ME I AM BACKWARDS'
   });
   ```
-  
+
   Try changing the message, or function in the helper file, or create other helper files and use more handlebar variables to do fun things.
