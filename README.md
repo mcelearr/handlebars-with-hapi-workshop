@@ -1,89 +1,28 @@
 # Hapi with handlebars workshop
 
-1. Clone this repo
-2. npm i
-3. npm start
+## Quickstart
+
+```bash
+git clone https://github.com/mcelearr/handlebars-with-hapi-workshop.git && cd hapi-with-handlebars-workshop
+npm install
+npm start
+```
 
 ## What
 
-A simple working hapi server using handlebars, layout/partials, helpers and serving static files.
+A simple workshop to practice building a working hapi server using handlebars, layout/partials, helpers and serving static files.
 
-## Steps
+## Workshop
 
-### Start
+Your friend loves [palindromes](https://en.wikipedia.org/wiki/Palindrome) and he wants to you to help him improve his website about the Panama Canal.
 
-Serves up basic static page.
-Routes
-- home.js
-- index.js
+### Step 1 (Solution branch - added-partial)
 
-layout
-- default.hbs
+1. Edit views/partials/headers.hbs to display the title.
+2. Add the header partial to layout/default.hbs.
 
-view
-- index.hbs
+### Step 2 (Solution branch - solution)
 
-### Step 1
-
-Create header partial
-partials
-- header.hbs
-
-### Step 2
-
-Serve up reverse page.
-Routes
-- reverse.js
-
-helpers
-- reverse.js
-
-view
-- reverse.hbs
-
-
-We create a helper folder in the same folder as the main template, and then js helper files within that folder, and direct to it with the server.views options:
-
-```js
-  server.views({
-    engines: {
-      hbs:require('handlebars')
-    },
-    relativeTo: __dirname,
-    helpersPath: 'templates/helpers',
-    path: 'templates'
-  })
-```
-Our helper file is ```reverse.js``` so this is what we call in the main template, passing it an argument (message)
-
-```hbs
-  <body>
-      {{reverse message}}
-    </body>
-```
-
-Our helper file, contains some basic code to do something to the argument:
-
-```js
-const reverse = (string) => {
-  return string.split("").reverse().join("");
-}
-
-
-module.exports = (message) => {
-  return reverse(message)
-}
-```
-
-We define a function, and then export that function being called with an argument. This is what will happen to the argument that we passed it in the template above.
-
-Finally, in your handler, you need to use ```reply.view``` and call the template, and then an object containing keys of the handlebar variables in our template, and values of what we want them to be.
-
-```js
-  reply.view('index', {
-    title: 'Our title',
-    message: 'HELP ME I AM BACKWARDS'
-  });
-  ```
-
-  Try changing the message, or function in the helper file, or create other helper files and use more handlebar variables to do fun things.
+1. Create a new route handler for the '/reverse' endpoint. Make sure the 'message' is the same as the routes/home.js.
+2. Export a function from helpers/reverse.js which takes a string and reverses it.
+3. Fill in views/reverse.hbs so that the reverse helper is applied to the message. Check the css file to see which class you should apply to the image.
