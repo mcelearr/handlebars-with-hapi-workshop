@@ -16,12 +16,12 @@ A simple workshop to practice building a working hapi server using handlebars, l
 
 Your friend loves [palindromes](https://en.wikipedia.org/wiki/Palindrome) and he wants to you to help him improve his website about the Panama Canal.
 
-### Step 1 (Solution branch - added-partial)
+### Step 1 (Solution is added-partial)
 
 1. Edit views/partials/headers.hbs to display the title.
 2. Add the header partial to layout/default.hbs.
 
-### Step 2 (Solution branch - solution)
+### Step 2 (Solution is solution)
 
 1. Create a new route handler for the '/reverse' endpoint. Make sure the 'message' is the same as the routes/home.js.
 2. Export a function from helpers/reverse.js which takes a string and reverses it.
