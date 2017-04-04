@@ -3,7 +3,7 @@
 ## Quickstart
 
 ```bash
-git clone https://github.com/mcelearr/handlebars-with-hapi-workshop.git && cd hapi-with-handlebars-workshop
+git clone https://github.com/mcelearr/handlebars-with-hapi-workshop.git && cd handlebars-with-hapi-workshop
 npm install
 npm start
 ```
